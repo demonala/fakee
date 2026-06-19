@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Future - Zyim</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0a0e0a;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            border: 2px solid #00ff41;
+            border-radius: 8px;
+            padding: 40px;
+            background: #0d120d;
+            box-shadow: 0 0 40px rgba(0,255,65,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #00ff41;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 3.5em;
+            color: #00ff41;
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px rgba(0,255,65,0.3);
+        }
+        .header p {
+            color: #88ff88;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        .family-section {
+            border-right: 1px solid #1a3a1a;
+            padding-right: 30px;
+        }
+        .family-section h2 {
+            color: #66ff99;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .family-section p {
+            color: #aaffaa;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        .family-section .quote {
+            margin-top: 20px;
+            padding: 15px;
+            border-left: 3px solid #00ff41;
+            background: #0f1a0f;
+            font-style: italic;
+            color: #88dd88;
+        }
+        .news-section {
+            padding-left: 10px;
+        }
+        .news-section h2 {
+            color: #ff6644;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ff6644;
+            padding-bottom: 10px;
+        }
+        .news-item {
+            background: #0f150f;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border-left: 3px solid #ff6644;
+        }
+        .news-item .headline {
+            color: #ff8866;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .news-item .date {
+            color: #668866;
+            font-size: 0.8em;
+            display: block;
+            margin-top: 5px;
+        }
+        .news-item .content {
+            color: #bbddbb;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        .status-bar {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #1a3a1a;
+            display: flex;
+            justify-content: space-between;
+            color: #668866;
+            font-size: 0.8em;
+        }
+        .vuln-badge {
+            background: #1a0000;
+            color: #ff3333;
+            padding: 3px 15px;
+            border-radius: 4px;
+            border: 1px solid #ff3333;
+            font-weight: bold;
+        }
+        @media (max-width: 700px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .family-section {
+                border-right: none;
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>OUR FUTURE</h1>
+            <p>For our family. For our blood.</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="family-section">
+                <h2>You Are Our Future</h2>
+                <p>
+                    Every step you take shapes what we become. Your courage, your vision, your strength 
+                    carries the weight of generations. We built this for you. Not for glory, not for power, 
+                    but for the simple truth that family endures.
+                </p>
+                <p style="margin-top:15px;">
+                    The world will try to break you. It will offer lies dressed as truths, and comfort 
+                    dressed as chains. Remember who you are. Remember whose blood runs in your veins.
+                </p>
+                <div class="quote">
+                    "The future belongs to those who build it with their own hands, not those who wait for permission."
+                </div>
+            </div>
+            
+            <div class="news-section">
+                <h2>Fake News</h2>
+                
+                <div class="news-item">
+                    <div class="headline">Government Approves Universal Basic Income</div>
+                    <span class="date">June 19, 2026</span>
+                    <div class="content">
+                        In a surprise move, officials announced that every citizen will receive monthly payments 
+                        starting next year. Critics call it a distraction from larger issues.
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="headline">Global Internet Outage Expected Next Week</div>
+                    <span class="date">June 18, 2026</span>
+                    <div class="content">
+                        Major ISPs warn of scheduled maintenance that could disrupt service for up to 48 hours. 
+                        Experts suggest preparing offline backups.
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="headline">New AI Model Can Predict Your Future</div>
+                    <span class="date">June 17, 2026</span>
+                    <div class="content">
+                        A controversial algorithm claims 95% accuracy in predicting life outcomes based on 
+                        social media activity. Privacy groups are demanding regulation.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="status-bar">
+            <span>System: Online</span>
+            <span class="vuln-badge">VULNERABLE</span>
+            <span>Zyim Target v1.0</span>
+        </div>
+    </div>
+</body>
+</html> 
