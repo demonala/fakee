@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureVault Financial Services | Official Portal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #3b82f6; }
+        .hero {
+            text-align: center;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+            z-index: -1;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        .hero h1 span {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(59,130,246,0.3);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: #f1f5f9;
+        }
+        .feature-card p {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            padding: 4rem 2rem;
+            background: rgba(15, 23, 42, 0.5);
+            margin: 2rem 0;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid #334155;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+        .security-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .live-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">SecureVault</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Enterprise</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Banking Security<br><span>Reimagined</span></h1>
+        <p>Enterprise-grade financial protection trusted by over 50,000 institutions worldwide. Your assets, our fortress.</p>
+        <a href="#" class="cta-btn">Get Started</a>
+        <div class="security-badge">
+            <span class="live-indicator"></span>
+            SSL ENCRYPTED | SOC 2 COMPLIANT
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item">
+            <div class="stat-number">$2.4B</div>
+            <div class="stat-label">Assets Protected</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">Active Clients</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Uptime SLA</div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Military-Grade Encryption</h3>
+            <p>AES-256 encryption with hardware security modules. Your data never touches plaintext storage.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Real-Time Threat Detection</h3>
+            <p>AI-powered intrusion detection system monitoring 24/7 with sub-millisecond response times.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Instant Transactions</h3>
+            <p>Process millions of transactions per second with our distributed ledger technology.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🌍</div>
+            <h3>Global Compliance</h3>
+            <p>GDPR, PCI-DSS, and HIPAA compliant infrastructure across 40+ countries.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>Forensic Audit Trail</h3>
+            <p>Immutable blockchain-based logging for complete transaction transparency.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <h3>Automated Recovery</h3>
+            <p>Self-healing systems with automated failover across 12 geographic regions.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 SecureVault Financial Services. All rights reserved.</p>
+        <p>1234 Cyber Avenue, Silicon Valley, CA 94025 | support@securevault.example</p>
+        <p style="margin-top: 1rem; font-size: 0.75rem; color: #475569;">
+            Server: Apache/2.4.41 (Ubuntu) | PHP/7.4.3 | MySQL/8.0.19 | Status: OPERATIONAL
+        </p>
+    </footer>
+</body>
+</html>
+ 
